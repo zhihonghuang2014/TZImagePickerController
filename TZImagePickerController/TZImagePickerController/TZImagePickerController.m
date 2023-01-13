@@ -57,7 +57,7 @@
     } else {
         self.view.backgroundColor = [UIColor whiteColor];
     }
-    self.navigationBar.barStyle = UIBarStyleBlack;
+
     self.navigationBar.translucent = YES;
     [TZImageManager manager].shouldFixOrientation = NO;
 
@@ -70,6 +70,13 @@
     self.navigationBar.tintColor = [UIColor whiteColor];
     self.automaticallyAdjustsScrollViewInsets = NO;
     if (self.needShowStatusBar) [UIApplication sharedApplication].statusBarHidden = NO;
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    
+    [super viewDidAppear:animated];
+    
+    self.navigationBar.barStyle = UIBarStyleBlack;
 }
 
 - (void)setNaviBgColor:(UIColor *)naviBgColor {
